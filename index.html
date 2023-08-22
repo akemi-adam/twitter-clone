@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="./assets/x-3.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <title>Página Inicial / X</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                borderWidth: {
+                    DEFAULT: '1px',
+                    '1': '1px',
+                    '2': '2px',
+                },
+                fontFamily: {
+                    arial: [ 'Arimo', 'sans-serif' ],
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-black font-arial">
+    <div class="grid grid-cols-4 mx-36 h-screen">
+        <div class="flex flex-col justify-between mr-8 mt-4">
+            <div class="flex flex-col gap-y-5 text-xl text-white">
+                <div>
+                    <a href="#">
+                        <img src="./assets/x-white.png" alt="Ícone do Twitter" class="w-6">
+                    </a>
+                </div>
+                <div class="flex flex-row gap-x-5">
+                    <img src="./assets/sidebar/home-1.svg" alt="Ícone Home" class="h-7">
+                    <span>Página Inicial</span>
+                </div>
+                <div class="flex flex-row gap-x-5">
+                    <img src="./assets/sidebar/search-1.svg" alt="Ícone de procura" class="h-7">
+                    <span>Explorar</span>
+                </div>
+                <div class="flex flex-row gap-x-5">
+                    <img src="./assets/sidebar/bell-1.svg" alt="Ícone de notificação" class="h-7">
+                    <span>Notificações</span>
+                </div>
+                <div class="flex flex-row gap-x-5">
+                    <img src="./assets/sidebar/mail-1.svg" alt="Ícone de messagem" class="h-7">
+                    <span>Mensagens</span>
+                </div>
+                <div class="flex flex-row gap-x-5">
+                    <img src="./assets/sidebar/list-1.svg" alt="Ícone de lista" class="h-7">
+                    <span>Listas</span>
+                </div>
+                <div class="flex flex-row gap-x-5">
+                    <img src="./assets/sidebar/bookmark-1.svg" alt="Ícone de itens salvos" class="h-7">
+                    <span>Itens salvos</span>
+                </div>
+                <div class="flex flex-row gap-x-5">
+                    <img src="./assets/sidebar/verify-1.svg" alt="Ícone de verificado" class="h-7">
+                    <span>Verificados</span>
+                </div>
+                <div class="flex flex-row gap-x-5">
+                    <img src="./assets/sidebar/profile-1.svg" alt="Ícone de perfil" class="h-7">
+                    <span>Perfil</span>
+                </div>
+                <div class="flex flex-row gap-x-5">
+                    <img src="./assets/sidebar/dots-1.svg" alt="Ícone de opções" class="h-7">
+                    <span>Mais</span>
+                </div>
+                <div>
+                    <button class="rounded-full w-full py-3 font-bold bg-sky-500">Postar</button>
+                </div>
+            </div>
+            <div class="mb-10">
+                <button class="flex flex-row gap-x-4 rounded-full w-full">
+                    <img src="./assets/user/profile-icon.jpg" alt="Ícone de perfil do usuário logado" class="h-12 rounded-full">
+                    <div class="flex flex-col">
+                        <h6 class="font-bold text-white">akemi.tsx</h6>
+                        <h6 class="text-gray-500">@akemidev</h6>
+                    </div>
+                    <img src="./assets/sidebar/dots-3.svg" alt="Ícone de opções" class="h-4 my-auto">
+                </button>
+            </div>
+        </div>
+        <div class="flex flex-col col-span-2 border-x-1 border-zinc-600 pt-4">
+            <div class="border-b-1 border-zinc-600">
+                <h2 class="ml-4 text-xl font-bold text-white">Página Inicial</h2>
+                <div class="flex flex-row border-b-1 border-zinc-600">
+                    <button class="py-4 text-center text-gray-500 w-full">Para você</button>
+                    <button class="py-4 text-center text-gray-500 w-full">Seguindo</button>
+                </div>
+                <div class="flex flex-row gap-x-4 m-4">
+                    <img src="./assets/user/profile-icon.jpg" alt="Ícone de perfil do usuário logado" class="h-12 rounded-full">
+                    <div class="flex flex-col flex-auto gap-y-4">
+                        <textarea name="tweet" id="tweet" placeholder="O que está acontecendo?" class="resize-vertical placeholder:text-xl placeholder:text-gray-500 text-white bg-black"></textarea>
+                        <div class="flex flex-row justify-between col-span-2">
+                            <div class="flex flex-row gap-x-3 my-auto">
+                                <img src="./assets/icons/image-1.svg" alt="Ícone de upload de imagem" class="h-5">
+                                <img src="./assets/icons/gif-1.svg" alt="Ícone de upload de GIF" class="h-5">
+                                <img src="./assets/icons/list-3.svg" alt="Ícone de lista para enquete" class="h-5">
+                                <img src="./assets/icons/smile-1.svg" alt="Ícone de emoji smile" class="h-5">
+                                <img src="./assets/icons/calendar-1.svg" alt="Ícone de calendário para programar um tweet" class="h-5">
+                                <img src="./assets/icons/location-1.svg" alt="Ícone de localização" class="h-5">
+                            </div>
+                            <button class="rounded-full w-20 p-1 font-bold text-white bg-sky-500">Postar</button>
+                        </div>
+                    </div>
+                </div>        
+            </div>
+            <div class="flex flex-row justify-between gap-x-4 px-4 mt-4 mb-2 border-b-1 border-zinc-600">
+                <img src="./assets/user/profile-icon.jpg" alt="Ícone de perfil do usuário" class="h-12 rounded-full">
+                <div class="flex flex-col flex-auto">
+                    <h6 class="flex flex-row justify-between">
+                        <div class="flex-row gap-x-3">
+                            <span class="font-bold text-white">akemi.tsx</span>
+                            <span class="text-gray-500">@akemidev · 7 s</span>
+                        </div>                        
+                        <button type="button">
+                            <img src="./assets/sidebar/dots-4.svg" alt="Ícone de opções" class="h-5">
+                        </button>
+                    </h6>
+                    <p class="text-white">
+                        Tailwind is best css framework! Change my mind 😎
+                    </p>
+                    
+                    <div class="flex flex-row justify-between my-3">
+                        <div>
+                            <img src="./assets/icons/comment-1.svg" alt="Ícone de comentário" class="h-[1rem]">
+                        </div>
+                        <div>
+                            <img src="./assets/icons/retweet-1.svg" alt="Ícone de retweet" class="h-[1.3rem]">
+                        </div>
+                        <div>
+                            <img src="./assets/icons/like-1.svg" alt="Ícone de curtir" class="h-[1.3rem]">
+                        </div>
+                        <div>
+                            <img src="./assets/icons/views-1.svg" alt="Ícone de visualizações" class="h-[1.1rem]">
+                        </div>
+                        <div>
+                            <img src="./assets/icons/download-1.svg" alt="Ícone de download" class="h-[1.3rem]">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col gap-y-3 ml-8 mt-4">
+            <div class="rounded-full flex flex-row py-3 pl-2 bg-zinc-800">
+                <div>
+                    <img src="./assets/sidebar/search-3.svg" alt="Ícone de procura" class="h-6">
+                </div>
+                <input type="text" placeholder="Buscar" class="ml-4 bg-zinc-800">
+                <div></div>
+            </div>
+            <div class="rounded-2xl flex flex-col gap-y-2 p-3 bg-zinc-800">
+                <h3 class="text-white font-bold">Assine o Premium</h3>
+                <p class="text-white font-semibold text-justify">
+                    Subscribe to unlock new features and if eligible, receive a share of ads revenue.
+                </p>
+                <button class="rounded-full w-32 p-1 font-bold text-white bg-sky-500">Inscreva-se</button>
+            </div>
+            <div class="rounded-2xl flex flex-col gap-y-3 p-3 bg-zinc-800">
+                <h3 class="text-white font-bold">O que está acontecendo</h3>
+                <div class="flex flex-col gap-y-1">
+                    <h6 class="text-gray-500"><a href="#">Campeonato Brasileiro ⋅ há 3 horas</a></h6>
+                    <h5 class="text-white font-semibold"><a href="#">Coritiba x Flamengo</a></h5>
+                </div>
+                <div class="flex flex-col gap-y-1">
+                    <h6 class="text-gray-500">Assuntos do momento</h6>
+                    <h5 class="text-white font-semibold">Emma Myers</h5>
+                    <h6 class="text-gray-500">11,5 mil posts</h6>
+                </div>
+                <div class="flex flex-col gap-y-1">
+                    <h6 class="text-gray-500">Assuntos do momento</h6>
+                    <h5 class="text-white font-semibold">Sukuna</h5>
+                    <h6 class="text-gray-500">7.523 posts</h6>
+                </div>
+                <div class="flex flex-col gap-y-1">
+                    <h6 class="text-gray-500">Assuntos do momento</h6>
+                    <h5 class="text-white font-semibold">Jennifer Lawrance</h5>
+                    <h6 class="text-gray-500">77.7 mil posts</h6>
+                </div>
+                <a href="#" class="text-sky-500">Mostrar mais</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
