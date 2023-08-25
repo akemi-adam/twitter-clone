@@ -1,6 +1,9 @@
 import React from "react"
 
+import FlashyButton from "./FlashyButton"
+import InfoCard from "./InfoCard"
 import SearchInput from "./SearchInput"
+import TrendCard from "./TrendCard"
 
 
 const RightBar: React.FC = () =>
@@ -8,36 +11,19 @@ const RightBar: React.FC = () =>
     return (
         <div className="flex flex-col gap-y-3 ml-8 mt-4">
             <SearchInput />
-            <div className="rounded-2xl flex flex-col gap-y-2 p-3 bg-zinc-800">
-                <h3 className="text-white font-bold">Assine o Premium</h3>
-                <p className="text-white font-semibold text-justify">
-                    Subscribe to unlock new features and if eligible, receive a share of ads revenue.
+            <InfoCard title="Assine o Premium" classes={{ flex: 'p-3' }}>
+                <p className="text-sm text-white font-semibold text-justify">
+                Assine para desbloquear novos recursos e, se elegível, receba uma parte da receita dos anúncios.
                 </p>
-                <button className="rounded-full w-32 p-1 font-bold text-white bg-sky-500">Inscreva-se</button>
-            </div>
-            <div className="rounded-2xl flex flex-col gap-y-3 p-3 bg-zinc-800">
-                <h3 className="text-white font-bold">O que está acontecendo</h3>
-                <div className="flex flex-col gap-y-1">
-                    <h6 className="text-gray-500"><a href="#">Campeonato Brasileiro ⋅ há 3 horas</a></h6>
-                    <h5 className="text-white font-semibold"><a href="#">Coritiba x Flamengo</a></h5>
-                </div>
-                <div className="flex flex-col gap-y-1">
-                    <h6 className="text-gray-500">Assuntos do momento</h6>
-                    <h5 className="text-white font-semibold">Emma Myers</h5>
-                    <h6 className="text-gray-500">11,5 mil posts</h6>
-                </div>
-                <div className="flex flex-col gap-y-1">
-                    <h6 className="text-gray-500">Assuntos do momento</h6>
-                    <h5 className="text-white font-semibold">Sukuna</h5>
-                    <h6 className="text-gray-500">7.523 posts</h6>
-                </div>
-                <div className="flex flex-col gap-y-1">
-                    <h6 className="text-gray-500">Assuntos do momento</h6>
-                    <h5 className="text-white font-semibold">Jennifer Lawrance</h5>
-                    <h6 className="text-gray-500">77.7 mil posts</h6>
-                </div>
-                <a href="#" className="text-sky-500">Mostrar mais</a>
-            </div>
+                <FlashyButton classes="w-32 p-1" labelText="Inscreva-se" />
+            </InfoCard>
+            <InfoCard title="O que está acontecendo" classes={{ flex: 'py-3', h3: 'ml-3' }}>
+                <TrendCard category="Campeonato Brasileiro ⋅ há 3 horas" topic="Coritiba x Flamengo" postsNumber="" topicLink="#" />
+                <TrendCard category="Assuntos do momento" topic="Emma Myers" postsNumber="11,5" topicLink="#" />
+                <TrendCard category="Anime - Assuntos do momento" topic="Sukuna" postsNumber="7.523" topicLink="#" />
+                <TrendCard category="Assuntos do momento" topic="Jennifer Lawrance" postsNumber="77,7 mil" topicLink="#" />
+                <a href="#" className="ml-3 text-sky-500 hover:underline">Mostrar mais</a>
+            </InfoCard>
         </div>
     )
 }
