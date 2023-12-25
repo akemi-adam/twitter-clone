@@ -1,8 +1,9 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 
 import ContentButton from "./ContentButton"
 import NewTweetArea from "./NewTweetArea"
 import Tweet from "./Tweet"
+import TweetType from "../types/TweetType"
 
 import profileImage from './../assets/user/profile-icon.jpg'
 
@@ -10,6 +11,25 @@ import profileImage from './../assets/user/profile-icon.jpg'
 const MainContent: React.FC = () =>
 {
     const [ contentIsActivated, setContentActivated ] = useState<boolean>(true)
+
+    const [ tweets, setTweets ] = useState<Array<TweetType>>([])
+
+    /* useEffect(() => {
+        
+    }, [tweets]) */
+
+    const createNewTweet = (content: string) => {
+        fetch('http://localhost:8000/tweet', {
+            method: 'POST',
+            body: JSON.stringify([content]),
+            headers: { "Content-type": "application/json" }
+        }).then(
+            response => response.json()
+        ).then((tweet: TweetType) => {
+            const newTweet: Array<TweetType> = [ { content: tweet.content } ]
+            setTweets([...tweets, ...newTweet])
+        })
+    }
 
     return (
         <div className="flex flex-col col-span-2 border-x-1 border-zinc-600 pt-4">
@@ -27,9 +47,10 @@ const MainContent: React.FC = () =>
                         onSelected={() => setContentActivated(false)}
                     />
                 </div>
-                <NewTweetArea profileImage={profileImage}/>        
+                <NewTweetArea profileImage={profileImage} createNewTweet={(content: string) => createNewTweet(content)}/>        
             </div>
-            {/* <Tweet profileImage={profileImage}/> */}
+            {tweets.map((tweet: TweetType) => <Tweet profileImage={profileImage} content={tweet.content}/>)}
+            {/* <Tweet profileImage={profileImage} content={}/> */}
         </div>
     )
 }

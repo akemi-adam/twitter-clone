@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 
 import FlashyButton from "./FlashyButton"
 
@@ -12,10 +12,13 @@ import locationIcon from './../assets/icons/location-1.svg'
 
 interface Props {
     profileImage: string,
+    createNewTweet: any
 }
 
-const NewTweetArea: React.FC<Props> = ({ profileImage }) =>
+const NewTweetArea: React.FC<Props> = ({ profileImage, createNewTweet }) =>
 {
+    const [ content, setContent ] = useState<string>('')
+
     return (
         <div className="flex flex-row gap-x-4 m-4">
             <img src={ profileImage } alt="Ícone de perfil do usuário logado" className="h-12 rounded-full"/>
@@ -30,7 +33,7 @@ const NewTweetArea: React.FC<Props> = ({ profileImage }) =>
                         <img src={calendarIcon} alt="Ícone de calendário para programar um tweet" className="h-5"/>
                         <img src={locationIcon} alt="Ícone de localização" className="h-5"/>
                     </div>
-                    <FlashyButton classes="w-20 p-1" labelText='Postar'/>
+                    <FlashyButton classes="w-20 p-1" labelText='Postar' action={(content: string) => createNewTweet(content)}/>
                 </div>
             </div>
         </div>

@@ -9,9 +9,10 @@ import downloadIcon from './../assets/icons/download-1.svg'
 
 interface Props {
     profileImage: string,
+    content: string
 }
 
-const Tweet: React.FC<Props> = ({ profileImage }) =>
+const Tweet: React.FC<Props> = ({ profileImage, content }) =>
 {
     return (
         <div className="flex flex-row justify-between gap-x-4 px-4 mt-4 mb-2 border-b-1 border-zinc-600">
@@ -27,7 +28,8 @@ const Tweet: React.FC<Props> = ({ profileImage }) =>
                     </button>
                 </h6>
                 <p className="text-white">
-                    Tailwind is best css framework! Change my mind 😎
+                    { content }
+                    {/* Tailwind is best css framework! Change my mind 😎 */}
                 </p>
                 
                 <div className="flex flex-row justify-between my-3">
